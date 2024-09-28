@@ -19,7 +19,40 @@ namespace YourNamespace.Controllers
             return View();
         }
 
-        public async Task StreamData()
+        public async Task StreamVideo()
+        {
+            string url = "http://192.168.1.102:8080/";
+            try
+            {
+                using (HttpResponseMessage response = await _httpClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+                {
+                    response.EnsureSuccessStatusCode();
+
+                    using (Stream stream = await response.Content.ReadAsStreamAsync())
+                    {
+                        Response.ContentType = "video/mp4"; // MIME type for MP4
+
+                        await stream.CopyToAsync(Response.Body);
+                    }
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                // Логирование ошибки или другие действия
+                Console.WriteLine($"HttpRequestException: {ex.Message}");
+                Response.StatusCode = 500; // Internal Server Error
+                await Response.WriteAsync("Error: Unable to connect to the video stream.");
+            }
+            catch (Exception ex)
+            {
+                // Логирование ошибки или другие действия
+                Console.WriteLine($"Exception: {ex.Message}");
+                Response.StatusCode = 500; // Internal Server Error
+                await Response.WriteAsync("Error: An unexpected error occurred.");
+            }
+        }
+
+        public async Task StreamLogs()
         {
             string url = "http://192.168.1.102:8080/";
             try

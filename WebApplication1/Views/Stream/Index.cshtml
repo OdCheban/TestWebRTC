@@ -4,16 +4,40 @@
 
 <h2>Stream Data</h2>
 
-<div id="streamData">
-    Loading data...
+<div id="streamVideo">
+    <video id="video" controls autoplay muted>
+        Your browser does not support the video tag.
+    </video>
 </div>
 
+<div id="streamLogs">
+    Loading logs...
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script>
+    if (Hls.isSupported()) {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('/Stream/StreamVideo');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = '/Stream/StreamVideo';
+        video.addEventListener('loadedmetadata', function () {
+            video.play();
+        });
+    }
+
     if (!!window.EventSource) {
-        var source = new EventSource('/Stream/StreamData');
+        var source = new EventSource('/Stream/StreamLogs');
 
         source.onmessage = function (event) {
-            document.getElementById('streamData').innerHTML = event.data;
+            // Очищаем содержимое элемента перед добавлением новых данных
+            document.getElementById('streamLogs').innerHTML = '';
+            document.getElementById('streamLogs').innerHTML += event.data + '<br>';
         };
 
         source.onerror = function (event) {
