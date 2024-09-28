@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Stream Data";
+}
+
+<h2>Stream Data</h2>
+
+<div id="streamData">
+    Loading data...
+</div>
+
+<script>
+    if (!!window.EventSource) {
+        var source = new EventSource('/Stream/StreamData');
+
+        source.onmessage = function (event) {
+            document.getElementById('streamData').innerHTML = event.data;
+        };
+
+        source.onerror = function (event) {
+            console.error('Error in EventSource:', event);
+        };
+    } else {
+        console.error('Your browser does not support Server-Sent Events.');
+    }
+</script>

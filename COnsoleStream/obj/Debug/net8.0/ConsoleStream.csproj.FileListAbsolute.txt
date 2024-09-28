@@ -1,0 +1,14 @@
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.AssemblyInfoInputs.cache
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.AssemblyInfo.cs
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.csproj.CoreCompileInputs.cache
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\bin\Debug\net8.0\ConsoleStream.exe
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\bin\Debug\net8.0\ConsoleStream.deps.json
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\bin\Debug\net8.0\ConsoleStream.runtimeconfig.json
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\bin\Debug\net8.0\ConsoleStream.dll
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\bin\Debug\net8.0\ConsoleStream.pdb
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.dll
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\refint\ConsoleStream.dll
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.pdb
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ConsoleStream.genruntimeconfig.cache
+C:\Users\odche\Desktop\ConsoleTest\ConsoleTest\ConsoleStream\obj\Debug\net8.0\ref\ConsoleStream.dll

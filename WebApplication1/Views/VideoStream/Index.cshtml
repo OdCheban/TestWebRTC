@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Video Stream";
+}
+
+<h2>Video Stream</h2>
+
+<video id="videoPlayer" controls autoplay>
+    Your browser does not support the video tag.
+</video>
+
+<script>
+    var videoPlayer = document.getElementById('videoPlayer');
+    var socket = new WebSocket('ws://' + window.location.host + '/VideoStream/StreamVideo');
+
+    socket.onmessage = function (event) {
+        var blob = new Blob([event.data], { type: 'video/mp4' }); // Установите соответствующий MIME-тип для вашего видео
+        var url = URL.createObjectURL(blob);
+        videoPlayer.src = url;
+    };
+
+    socket.onerror = function (event) {
+        console.error('WebSocket error:', event);
+    };
+
+    socket.onclose = function (event) {
+        console.log('WebSocket closed:', event);
+    };
+</script>
