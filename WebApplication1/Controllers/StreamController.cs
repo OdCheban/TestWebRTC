@@ -8,6 +8,7 @@ namespace YourNamespace.Controllers
     public class StreamController : Controller
     {
         private readonly HttpClient _httpClient;
+        static string url = "http://192.168.1.102:8080/";
 
         public StreamController()
         {
@@ -21,7 +22,6 @@ namespace YourNamespace.Controllers
 
         public async Task StreamVideo()
         {
-            string url = "http://192.168.1.102:8080/";
             try
             {
                 using (HttpResponseMessage response = await _httpClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
@@ -54,7 +54,6 @@ namespace YourNamespace.Controllers
 
         public async Task StreamLogs()
         {
-            string url = "http://192.168.1.102:8080/";
             try
             {
                 using (HttpResponseMessage response = await _httpClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
